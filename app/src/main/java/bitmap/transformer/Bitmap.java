@@ -55,7 +55,7 @@ public class Bitmap {
 //                int x = (r + g + b) / 4;
                     Color transparent = new Color (g, b, r, a);
                     this.pixelData.setRGB(i, j, transparent.getRGB());
-
+// test test 
 
 //                Color grayColor = new Color (gray, gray, gray);
 //                this.pixelData.setRGB(i, j, grayColor.getRGB());
