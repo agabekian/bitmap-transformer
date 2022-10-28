@@ -15,10 +15,10 @@ import java.io.IOException;
                     case "greyscale":
                         bitMapFromFile.convertToGreyScale();
                         break;
-                    case "negative":
+                    case "invert":
                         bitMapFromFile.convertToNegative();
                         break;
-                    case "transparent":
+                    case "whitetored":
                         bitMapFromFile.convertWhiteToRed();
                         break;
                     default:
@@ -28,3 +28,5 @@ import java.io.IOException;
                 bitMapFromFile.write(args[1]);
             }
         }
+
+// main ref for how to start https://github.com/SharinaS/bitmap-transformer

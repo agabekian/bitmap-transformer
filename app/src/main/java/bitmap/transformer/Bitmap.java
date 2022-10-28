@@ -34,7 +34,6 @@ public class Bitmap {
         }
     }
 
-    // http://www.java2s.com/Tutorials/Java/Graphics_How_to/Image/Convert_negative_image_to_positive.htm
     public void convertToNegative() {
         for (int i = 0; i < this.pixelData.getWidth(); i++){
             for( int j=0; j < this.pixelData.getHeight(); j++){
@@ -60,3 +59,5 @@ public class Bitmap {
         }
     }
 }
+
+// main ref for how to start https://github.com/SharinaS/bitmap-transformer
