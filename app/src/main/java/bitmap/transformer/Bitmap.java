@@ -19,16 +19,16 @@ public class Bitmap {
         ImageIO.write(this.pixelData, "bmp", f);
     }
 
-    public void convertToGrayScale() {
+    public void convertToGreyScale() {
         for (int i=0; i < this.pixelData.getWidth(); i++){
             for( int j=0; j < this.pixelData.getHeight(); j++){
                 Color color = new Color(this.pixelData.getRGB(i, j));
                 int r = color.getRed();
                 int g = color.getGreen();
                 int b = color.getBlue();
-                int gray = (r + g + b) / 3;
+                int grey = (r + g + b) / 3;
 
-                Color grayColor = new Color (gray, gray, gray);
+                Color grayColor = new Color (grey, grey, grey);
                 this.pixelData.setRGB(i, j, grayColor.getRGB());
             }
         }
@@ -44,7 +44,7 @@ public class Bitmap {
             }
         }
     }
-    public void convertToTransparent() {
+    public void convertWhiteToRed() {
         for (int i=0; i < this.pixelData.getWidth(); i++){
             for( int j=0; j < this.pixelData.getHeight(); j++){
                 Color color = new Color(this.pixelData.getRGB(i, j));
@@ -52,13 +52,10 @@ public class Bitmap {
                 int g = color.getGreen();
                 int b = color.getBlue();
                 int a = color.getAlpha();
-//                int x = (r + g + b) / 4;
-                    Color transparent = new Color (g, b, r, a);
-                    this.pixelData.setRGB(i, j, transparent.getRGB());
-// test test 
-
-//                Color grayColor = new Color (gray, gray, gray);
-//                this.pixelData.setRGB(i, j, grayColor.getRGB());
+                if(r > 200 && g > 200 && b > 200) {
+                    Color red = new Color(255, 0, 0, a);
+                    this.pixelData.setRGB(i, j, red.getRGB());
+                }
             }
         }
     }
