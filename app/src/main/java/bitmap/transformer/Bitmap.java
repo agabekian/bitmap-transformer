@@ -10,7 +10,7 @@ public class Bitmap {
 
     BufferedImage pixelData;
 
-    public Bitmap(String fileName) throws IOException {
+    public Bitmap(String fileName) throws IOException { //a class to open and read file . instantiates an obj to processs
         File f = new File(fileName);
         this.pixelData = ImageIO.read(f);
     }
