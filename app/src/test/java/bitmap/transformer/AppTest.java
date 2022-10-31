@@ -4,11 +4,32 @@
 package bitmap.transformer;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
+
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
-    @Test void appHasAGreeting() {
-        App classUnderTest = new App();
-        assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+//    @Test void appHasAGreeting() {
+//        App classUnderTest = new App();
+//        assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+//    }
+
+    @Test void checkFileOutputBitmapTransformer() throws IOException {
+        Path resDir = Paths.get("src","test","resources");
+        String absPath = resDir.toFile().getAbsolutePath();
+        String testPath = "/Users/lolunts/401/sync/bitmap-transformer/app/src/test/resources/baldy.bmp";
+        String outPath = "/Users/lolunts/401/sync/bitmap-transformer/app/src/test/resources/out.bmp";
+
+        Bitmap open = new Bitmap(testPath);
+        open.convertWhiteToRed();
+        open.write(outPath);
+
+        assertDoesNotThrow(App);
+        System.out.println(absPath);
+
     }
 }
